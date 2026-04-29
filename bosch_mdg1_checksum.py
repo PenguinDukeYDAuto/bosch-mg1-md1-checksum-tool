@@ -8,18 +8,6 @@ build by dukeapenguin
     python bosch_mdg1_checksum.py firmware.bin                # 校验
     python bosch_mdg1_checksum.py firmware.bin -w fixed.bin   # 重算并写回
 
-DLL 函数对应:
-    FUN_10001070/1110/1140  -> _crc32       多项式 0xEDB88320
-    FUN_10001180            -> _bsum
-    FUN_10002bb0            -> _add32
-    FUN_10002c00            -> _add16
-    FUN_10001880            -> find_slots
-    FUN_10002fe0/10002c50   -> _parse_sub_regions
-    FUN_10003280            -> compute_algo
-    FUN_10003a10            -> verify / recompute
-    FUN_10001680            -> validate_trailer
-"""
-
 import struct
 import zlib
 from dataclasses import dataclass, field
